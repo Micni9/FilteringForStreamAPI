@@ -2,14 +2,13 @@ package org.jc;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class SetFiltering<T> extends BaseFiltering<T> {
 
     private final Set<T> validSet;
 
-    public SetFiltering(List<T> validList) {
+    public SetFiltering(Collection<T> validList) {
         validSet = new HashSet<>(validList);
     }
 
