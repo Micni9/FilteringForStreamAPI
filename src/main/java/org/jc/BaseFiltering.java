@@ -1,7 +1,7 @@
 package org.jc;
 
-import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public abstract class BaseFiltering<T> {
     abstract Boolean check(T obj);
@@ -10,7 +10,7 @@ public abstract class BaseFiltering<T> {
     public Predicate<T> getPredicate() {
         return this::check;
     }
-    public List<T> filter(List<T> objList) {
-        return objList.stream().filter(getPredicate()).toList();
+    public Stream<T> filter(Stream<T> objStream) {
+        return objStream.filter(getPredicate());
     }
 }

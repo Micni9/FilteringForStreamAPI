@@ -42,11 +42,11 @@ class BaseFilteringTest {
 
         Set<String> filteredSet = Set.of(stringList.get(2), stringList.get(3));
 
-        List<String> filteredList = mockTest.filter(stringList);
+        List<String> filteredList = mockTest.filter(stringList.stream()).toList();
 
         assertEquals(2, filteredList.size());
-        filteredList.forEach(str -> {
-            assertTrue(filteredSet.contains(str));
-        });
+        filteredList.forEach(str ->
+            assertTrue(filteredSet.contains(str))
+        );
     }
 }
